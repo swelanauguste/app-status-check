@@ -12,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "&6#_3$l2zvoptxw$8ncm-s99&+%2mh(z9*dt-32kblu)0=w$-z"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["immigration.kingship.info", 'www.immigration.kingship.info"']
 
