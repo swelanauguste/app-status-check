@@ -9,15 +9,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-&6#_3$l2zvoptxw$8ncm-s99&+%2mh(z9*dt-32kblu)0=w$-z"
+SECRET_KEY = "&6#_3$l2zvoptxw$8ncm-s99&+%2mh(z9*dt-32kblu)0=w$-z"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["immigration.kingship.info",]
+ALLOWED_HOSTS = ["immigration.kingship.info", 'www.immigration.kingship.info"']
 
 CSRF_TRUSTED_ORIGINS = ["https://immigration.kingship.info"]
-
 
 
 # Application definition
@@ -123,3 +122,11 @@ EMAIL_FILE_PATH = "emails"
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
 CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE  = True
+SECURE_SSL_REDIRECT = True
+
+SECURE_HSTS_SECONDS = 31536000
+SECURE_HSTS_PRELOAD = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
