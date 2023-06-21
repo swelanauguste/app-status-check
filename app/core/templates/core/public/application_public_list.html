@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+
+{% block nav %}
+    
+{% endblock nav %}
+    
+
+{% block content %}
+<div class="col-lg-4 mx-auto mt-5 pt-5">
+    <form action=""
+        method="get">
+        <input class="form-control rounded-pill"
+            autofocus
+            type="text"
+            placeholder="Search by Application, Receipt or NIC #"
+            name="q">
+        <div class="text-end">
+            <a class="small text-muted"
+                href="/">reset</a>
+        </div>
+    </form>
+    <hr>
+    {% for ob in object_list %}
+    <a href="{% url 'application-get-update' ob.slug %}">
+        <p class="text-center">Application Status:
+            {{ob.get_status_display|upper}}</p>
+    </a>
+    <hr>
+    <p class="">Application Status: {{ob.details}}</p>
+    {% empty %}
+    <p class="text-center">No results</p>
+    {% endfor %}
+</div>
+{% endblock content %}
