@@ -32,10 +32,12 @@
     {% if request.user.is_authenticated %}
     {% include 'admin-nav.html' %}
     {% endif %}
+    <div class="container py-5">
+        {% block content %}
 
-    {% block content %}
-
-    {% endblock content %}
+        {% endblock content %}
+    </div>
+    {% include 'footer.html' %}
 
     <script
         src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

@@ -8,15 +8,14 @@ from .models import Application
 
 class ApplicationGetUpdateView(UpdateView):
     model = Application
-    template_name = 'core/public/application_public_form.html'
+    template_name = "core/public/application_public_form.html"
     success_url = "/"
     fields = ["get_email_updates", "email"]
 
 
 class ApplicationListView(ListView):
     model = Application
-    template_name = 'core/public/application_public_list.html'
-    
+    template_name = "core/public/application_public_list.html"
 
     def get_queryset(self):
         query = self.request.GET.get("q")
@@ -32,21 +31,28 @@ class ApplicationListView(ListView):
 
 class ApplicationAdminDetailUpdateView(LoginRequiredMixin, UpdateView):
     model = Application
-    template_name = 'core/admin/application_admin_form.html'
+    template_name = "core/admin/application_admin_form.html"
     success_url = "/"
-    fields = ["application_number", "nic_number", "receipt_number", "status", "details"]
+    fields = ["status", "application_number", "nic_number", "receipt_number", "details"]
 
 
 class ApplicationAdminCreateView(LoginRequiredMixin, CreateView):
     model = Application
-    template_name = 'core/admin/application_admin_form.html'
+    template_name = "core/admin/application_admin_form.html"
     success_url = "/"
-    fields = ["application_number", "nic_number", "receipt_number", "status", "details"]
+    fields = [
+        "status",
+        "application_number",
+        "nic_number",
+        "receipt_number",
+        "status",
+        "details",
+    ]
 
 
 class ApplicationAdminListView(LoginRequiredMixin, ListView):
     model = Application
-    template_name = 'core/admin/application_admin_list.html'
+    template_name = "core/admin/application_admin_list.html"
 
     def get_queryset(self):
         query = self.request.GET.get("admin-q")

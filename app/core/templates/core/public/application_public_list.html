@@ -7,7 +7,7 @@
     
 
 {% block content %}
-<div class="col-lg-4 mx-auto mt-5 pt-5">
+<div class="col-lg-4 mx-auto mt-5">
     <form action=""
         method="get">
         <input class="form-control rounded-pill"
@@ -16,7 +16,7 @@
             placeholder="Search by Application, Receipt or NIC #"
             name="q">
         <div class="text-end">
-            <a class="small text-muted"
+            <a class="small text-muted pe-3"
                 href="/">reset</a>
         </div>
     </form>
@@ -28,8 +28,6 @@
     </a>
     <hr>
     <p class="">Application Status: {{ob.details}}</p>
-    {% empty %}
-    <p class="text-center">No results</p>
     {% endfor %}
 </div>
 {% endblock content %}

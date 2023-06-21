@@ -16,12 +16,13 @@ APP_STATUS_CHOICES = (
 
 
 class Application(models.Model):
-    application_number = models.CharField(max_length=50, unique=True)
-    nic_number = models.CharField("NIC number", max_length=50, unique=True)
-    receipt_number = models.CharField(max_length=50, unique=True)
     status = models.CharField(
         max_length=2, choices=APP_STATUS_CHOICES, default=PROCESSING
     )
+    application_number = models.CharField(max_length=50, unique=True)
+    nic_number = models.CharField("NIC number", max_length=50, unique=True)
+    receipt_number = models.CharField(max_length=50, unique=True)
+    
     slug = models.SlugField(max_length=50, blank=True, unique=True, null=True)
     details = models.TextField(blank=True)
     email = models.EmailField(blank=True)

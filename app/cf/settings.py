@@ -14,7 +14,11 @@ SECRET_KEY = "&6#_3$l2zvoptxw$8ncm-s99&+%2mh(z9*dt-32kblu)0=w$-z"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["immigration.kingship.info", 'www.immigration.kingship.info"']
+ALLOWED_HOSTS = [
+    "immigration.kingship.info",
+    "www.immigration.kingship.info",
+    "localhost",
+]
 
 CSRF_TRUSTED_ORIGINS = ["https://immigration.kingship.info"]
 
