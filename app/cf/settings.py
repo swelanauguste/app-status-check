@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -13,7 +14,10 @@ SECRET_KEY = "django-insecure-&6#_3$l2zvoptxw$8ncm-s99&+%2mh(z9*dt-32kblu)0=w$-z
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["immigration.kingship.info",]
+
+CSRF_TRUSTED_ORIGINS = ["https://immigration.kingship.info"]
+
 
 
 # Application definition
